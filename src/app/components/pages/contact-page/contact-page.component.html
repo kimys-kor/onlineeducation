@@ -1,0 +1,109 @@
+<app-header></app-header>
+
+<div class="page-title-area ">
+    <div class="container">
+        <div class="page-title-content">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>고객센터</li>
+            </ul>
+            <h2>문의하기</h2>
+        </div>
+    </div>
+</div>
+
+<div class="contact-info-area pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="contact-info-box mb-30">
+                    <div class="icon">
+                        <i class='bx bx-paper-plane icon-arrow before'></i>
+                    </div>
+                    <h3><a href="/contact">문의 하기</a></h3>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="contact-info-box mb-30">
+                    <div class="icon">
+                        <i class='bx bx-envelope'></i>
+                    </div>
+                    <h3><a href="/contactcheck">문의글 확인</a></h3>
+                </div>
+            </div>
+            <!-- <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-0 offset-md-3 offset-sm-3">
+                <div class="contact-info-box mb-30">
+                    <div class="icon">
+                        <i class='bx bx-phone-call'></i>
+                    </div>
+                    <h3>Call Here</h3>
+                    <p><a href="tel:1234567890">+123 456 7890</a></p>
+                    <p><a href="tel:2414524526">+241 452 4526</a></p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<div class="contact-area pb-100" style="margin-top: 50px;">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">Contact Us</span>
+            <h2>문의 하기</h2>
+        </div>
+        <div class="contact-form">
+            <form #contactForm="ngForm">
+                <div class="row">
+                    <!-- <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                            <input required minlength="3" maxlength="50" ngModel name="email" type="text" #email="ngModel" class="form-control" id="email" placeholder="이메일">
+                            
+                            <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                                <div *ngIf="email.errors.required">이메일을 입력해주세요.</div>
+                                <div *ngIf="email.errors.minlength">Name is minimum {{ email.errors.minlength.requiredLength }} character.</div>
+                                <div *ngIf="email.errors.maxlength">Name is maximum 50 character.</div>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+                    <!-- <app-editorjs></app-editorjs> -->
+
+
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                            <input required ngModel name="FAQ" type="text" #FAQ="ngModel" class="form-control" id="FAQ"
+                                placeholder="문의유형">
+                            <div class="alert alert-danger" *ngIf="FAQ.touched && !FAQ.valid">문의 유형을 선택해주세요</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                            <input required ngModel name="subject" type="text" #subject="ngModel" class="form-control"
+                                id="subject" placeholder="제목">
+                            <div class="alert alert-danger" *ngIf="subject.touched && !subject.valid">제목을 입력해주세요</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                            <textarea required ngModel #message="ngModel" name="message" id="message" cols="30" rows="5"
+                                class="form-control" placeholder="내용"></textarea>
+                            <div class="alert alert-danger" *ngIf="message.touched && !message.valid">내용을 입력해주세요</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <button type="submit" class="default-btn" [class.disabled]="!contactForm.valid"><i
+                                class='bx bx-paper-plane icon-arrow before'></i><span class="label">Send
+                                Message</span><i class="bx bx-paper-plane icon-arrow after"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="contact-bg-image"><img src="assets/img/map.png" alt="image"></div>
+</div>
+<!-- 
+<div id="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d359536.14502592356!2d-76.08043413946686!3d45.25029749557496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce04ff4fe494ef%3A0x26bb54f60c29f6e!2sParliament%20Hill!5e0!3m2!1sen!2sbd!4v1593691677634!5m2!1sen!2sbd"></iframe>
+</div> -->

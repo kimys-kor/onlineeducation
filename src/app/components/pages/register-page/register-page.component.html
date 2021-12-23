@@ -1,0 +1,110 @@
+<div class="register-area">
+    <div class="row m-0">
+        <div class="col-lg-6 col-md-12 p-0">
+            <div class="register-image">
+                <img src="assets/img/register-bg.jpg" alt="image">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 p-0">
+            <div class="register-content">
+                <div class="d-table">
+                    <div class="d-table-cell">
+                        <div class="register-form">
+                            <h1>회원가입</h1>
+                            <div class="logo">
+                                <a routerLink="/"><img src="assets/img/black-logo.png" alt="image"></a>
+                            </div>
+
+                            <a routerLink="/login"> 로그인 하러가기</a>
+
+
+
+                            <form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate>
+                                <div class="form-group">
+                                    <select class="form-select" formControlName="enrolltype">
+                                        <option selected value="">가입유형 선택</option>
+                                        <option value="1">학생</option>
+                                        <option value="2">구직자</option>
+                                        <option value="3">재직자</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group" *ngIf="signupForm.value.enrolltype==1">
+                                    <select class="form-select" formControlName="schoolname">
+                                        <option selected value="">학교선택</option>
+                                        <option value="1">조선대</option>
+                                        <option value="2">전남대</option>
+                                        <option value="3">지스트</option>
+                                        <option value="4">호남대</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group" *ngIf="signupForm.value.enrolltype==3">
+                                    <img [src]="imageSrc" style="width: 10%; height: 10%;">
+                                    <p>소속증명서류 업로드</p><input type="file" accept="image/*" class="form-file"
+                                        formControlName="corpinfo" (change)="onFileChange(fileInput.files)" #fileInput>
+                                    <input type="text" placeholder="회사명 입력" class="form-control"
+                                        formControlName="corpname">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" placeholder="이메일" class="form-control" formControlName="email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" placeholder="비밀번호" class="form-control"
+                                        formControlName="password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="이름" class="form-control" formControlName="name">
+                                </div>
+
+                                <button type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+
+                            </form>
+
+                            <!-- <form [formGroup]="signupForm" (ngSubmit)="signup()">
+                                <div class="row">
+                                
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <input required ngModel name="email" type="email" #FAQ="ngModel"
+                                                class="form-control" id="FAQ" placeholder="이메일" formControlName="email">
+                                            <div class="alert alert-danger" *ngIf="FAQ.touched && !FAQ.valid">이메일을
+                                                입력해주세요 </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <input required ngModel name="subject" type="text" #subject="ngModel"
+                                                class="form-control" id="subject" placeholder="비밀번호">
+                                            <div class="alert alert-danger" *ngIf="subject.touched && !subject.valid">
+                                                비밀번호를 입력해주세요</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <textarea required ngModel #message="ngModel" name="message" id="message"
+                                                class="form-control" placeholder="이름"></textarea>
+                                            <div class="alert alert-danger" *ngIf="message.touched && !message.valid">
+                                                이름을 입력해주세요</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <button type="submit" class="default-btn"
+                                            [class.disabled]="!contactForm.valid"><span class="label">Sign Up</span><i
+                                                class="bx bx-paper-plane icon-arrow after"></i></button>
+                                    </div>
+                                </div>
+                            </form> -->
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

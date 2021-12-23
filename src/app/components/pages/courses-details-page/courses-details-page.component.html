@@ -1,0 +1,248 @@
+<app-header></app-header>
+
+<div class="page-title-area page-title-style-two">
+    <div class="container">
+        <div class="page-title-content">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>전체강좌/ {{coursedetail[0].subject}}</li>
+            </ul>
+            <h2></h2>
+        </div>
+    </div>
+</div>
+
+<div class="courses-details-area pt-100 pb-70">
+
+    <div class="container">
+        <div class="courses-details-header">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="courses-title">
+                        <h2>{{coursedetail[0].subject}}</h2>
+                        <p>{{coursedetail[0].teacher}}</p>
+                    </div>
+                    <div class="courses-meta">
+                        <ul>
+                            <li>
+                                <i class='bx bx-folder-open'></i>
+                                <span>Category</span>
+                                <a routerLink="/single-courses">{{coursedetail[0].category}}</a>
+                            </li>
+                            <li>
+                                <i class='bx bx-calendar'></i>
+                                <span>Last Updated</span>
+                                <a routerLink="/single-courses">{{coursedetail[0].last_upload}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="courses-price">
+                        <div class="courses-review">
+                            <div class="review-stars">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div>
+                            <span class="reviews-total d-inline-block">(2 reviews)</span>
+                        </div>
+                        <div class="price">Free</div>
+                        <a routerLink="/single-courses" class="default-btn"><i
+                                class='bx bx-paper-plane icon-arrow before'></i><span class="label">수강등록하기</span><i
+                                class="bx bx-paper-plane icon-arrow after"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="courses-details-image text-center">
+                    <img src="assets/img/courses/courses2.jpg" alt="image">
+                </div>
+
+                <!-- 렉처목록 -->
+                <div class="courses-sidebar-syllabus">
+                    <h3>강의</h3>
+                    <div *ngFor="let item of lectures">
+                        <span class="chapter">Chapter</span>
+                        <h4>{{item.title}}</h4>
+                        <div class="courses-list">
+                            <ul>
+                                <li *ngFor="let item2 of item.name">
+                                    <a routerLink="/viewcourse/{{courseid}}">
+                                        <span class="number">{{item2}} </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="courses-review-comments">
+                        <h3>퀴즈</h3>
+
+                        <div class="user-review" *ngFor="let item of quizs[0].quiz">
+                            <span class="d-block sub-comment">{{item}}
+                                <a class="quizstart" routerLink="/viewquiz/{{courseid}}"><i><button
+                                            class="btn btn-primary">Start</button></i></a>
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="courses-review-comments">
+                        <h3>리뷰</h3>
+                        <div class="user-review">
+
+                            <div class="review-rating">
+                                <div class="review-stars">
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                </div>
+                                <span class="d-inline-block">qo*****</span>
+                            </div>
+                            <span class="d-block sub-comment">자세하게 설명해 주십니다.</span>
+                            <p>현재는 졸업생이지만 기초과목에 대한 복습겸 수강을 하게 됐습니다.
+                                저처럼 이전에 배웠던 과목에 대해 다시한번 쭉 훑고 싶거나 복습을 하고 싶은신 분들에게는 추천드립니다.
+                                다소 지루할수도 있는 부분들은 너무 깊게 다루지도 않고 딱 대학교 1학년이 듣기 쉽게 잘 설명해주시고 필요한 부분들만 딱딱 짚어주는게 좋았습니다. 토마스나
+                                스튜어트 둘 다 사실상 차이가 없기 때문에 어떤 과목을 들어도 상관없을 것 같습니다. 공대같은경우 수학은 기본으로 해야하기 때문에 확실히 익혀두시면 어려움이
+                                없으실겁니다.</p>
+                        </div>
+                        <div class="user-review">
+
+                            <div class="review-rating">
+                                <div class="review-stars">
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                </div>
+                                <span class="d-inline-block">km*****</span>
+                            </div>
+                            <span class="d-block sub-comment">기초미적은 여기서!</span>
+                            <p>대학에 들어가서 미적분학을 공부해야 한다는 생각에 예습을 목적으로 구매하였습니다.
+                                강의력도 좋으시고 체계적인 프로그램이 좋았습니다.
+                                본인이 공부할 교재랑도 잘 확인을 하고, 선택하면 좋을 것 같습니다.
+                                다만, 본인의 의지가 매우 중요한 것 같습니다.
+                                녹화 강의라서 공부 의지가 잘 잡히지 않아서 힘들때도 있었지만,
+                                그래도 결과적으로 미적과의 1학년을 잘 보낸 것 같습니다.</p>
+                        </div>
+                        <div class="user-review">
+                            <div class="review-rating">
+                                <div class="review-stars">
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                </div>
+                                <span class="d-inline-block">no*****</span>
+                            </div>
+                            <span class="d-block sub-comment">딱 핵심만 집어주셔서 좋았음</span>
+                            <p>가뜩이나 시간도없고 빠르게 끝내야됐는데
+                                핵심부분만 딱 정리해서 공식같은거 올려주시고
+                                적분공식이라던지 너무 간단하게 설명해주셔서 너무좋았음
+                                인터넷 뒤져봐도 이렇게 정리해준 사진은 없었음
+                                물론 공식유도과정도 자세하게 풀어주셨지만 나는 전기과라서 스킵하고
+                                정리된 부분만 보고 이해하고 넘어감
+                                근데 유도과정도 잘 설명해주셔서 이해는 가능했음
+                                워낙 정리를 잘 하셔서
+                                빠르게 속성으로 훝을수있었음</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+                <div class="courses-sidebar-information">
+                    <ul>
+                        <li>
+                            <span><i class='bx bx-time'></i> 강의 시간:</span>
+                            {{coursedetail[0].total_time}}
+                        </li>
+                        <li>
+                            <span><i class='bx bxs-institution'></i> 과제제출:</span>
+                            <a target="_blank" class="d-inline-block">2회</a>
+                        </li>
+                        <li>
+                            <span><i class='bx bxs-graduation'></i> 과목명:</span>
+                            {{coursedetail[0].subject}}
+                        </li>
+                        <li>
+                            <span><i class='bx bx-atom'></i> 퀴즈제출:</span>
+                            5회
+                        </li>
+                        <li>
+                            <span><i class='bx bxs-badge-check'></i> 강의난이도:</span>
+                            입문자
+                        </li>
+                        <li>
+                            <span><i class='bx bx-support'></i> 강의진행:</span>
+                            한국어
+                        </li>
+                        <li>
+                            <span><i class='bx bx-certification'></i> 수료증발급:</span>
+                            <button class="btn btn primary"
+                                onclick="window.open('/survey','window_name','width=1070,height=1654,location=no,status=no,scrollbars=yes');">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-file-earmark-image" viewBox="0 0 16 16">
+                                    <path d="M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                    <path
+                                        d="M14 14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5V14zM4 1a1 1 0 0 0-1 1v10l2.224-2.224a.5.5 0 0 1 .61-.075L8 11l2.157-3.02a.5.5 0 0 1 .76-.063L13 10V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4z" />
+                                </svg>가능</button>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="courses-details-desc">
+                    <h3>무엇을 배우나요?</h3>
+                    <div class="why-you-learn">
+                        <ul>
+                            <li *ngFor="let item of learnwhat">
+                                <span>
+                                    <i class='bx bx-check'></i>
+                                    {{item}}
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>교육대상</h3>
+                    <ul class="requirements-list">
+                        <li *ngFor="let item of targetstudent">{{item}}</li>
+                    </ul>
+
+                    <h3>강좌소개</h3>
+                    <div *ngFor="let item of int">
+                        <p><strong>- {{item}}</strong></p>
+                    </div>
+
+                    <h3>강의 자료</h3>
+                    <div>
+                        <a class="downloadicon" (click)="down()" target="_blank"
+                            href="http://smits-api.bs-soft.co.kr/files/yskim@bs-soft.co.kr/%EC%8B%A4%ED%97%98%EB%AC%BC%EB%A6%AC%EC%9D%98%20%EA%B8%B0%EC%B4%88.pdf"
+                            download>1강
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="bi bi-file-arrow-down" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 5a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5A.5.5 0 0 1 8 5z" />
+                                <path
+                                    d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

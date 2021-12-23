@@ -1,0 +1,40 @@
+<div class="login-area">
+    <div class="row m-0">
+        <div class="col-lg-6 col-md-12 p-0">
+            <div class="login-image">
+                <img src="assets/img/login-bg.jpg" alt="image">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 p-0">
+            <div class="login-content">
+                <div class="d-table">
+                    <div class="d-table-cell">
+                        <div class="login-form">
+                            <h1>로그인</h1>
+                            <div class="logo">
+                                <a routerLink="/"><img src="assets/img/black-logo.png" alt="image"></a>
+                            </div>
+                            
+                            <p><a routerLink="/register"> 회원가입 하러가기</a></p>
+                            <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+                                <div class="form-group">
+                                    <input type="email" placeholder="이메일" class="form-control" formControlName="email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" placeholder="비밀번호" class="form-control" formControlName="password">
+                                </div>
+                                <button type="submit" >Login</button>
+                                <div class="forgot-password">
+                                    <a routerLink="/">비밀번호 찾기</a>
+                                </div>
+                                <div class="connect-with-social">
+                                    <!-- <button type="submit" class="facebook"><i class='bx bxl-facebook'></i> 페이스북으로 로그인</button> -->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

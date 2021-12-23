@@ -1,0 +1,41 @@
+<div class="page-title-area page-title-style-two">
+    <div class="container">
+        <div class="page-title-content">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>전체강좌/ 강의</li>
+            </ul>
+            <h2>강의수강</h2>
+        </div>
+    </div>
+</div>
+
+<div class="blog-area ptb-100">
+
+
+    <div class="container">
+
+
+        <div class="row">
+
+            <div class="col-lg-2 col-md-12">
+
+
+                <div class="list-group">
+                    <button *ngFor="let lecture of lecturelist; let i = index" type="button"
+                        class="list-group-item list-group-item-action " (click)="btnclick(i)"><span
+                            class="number"></span> {{lecture}} </button>
+                </div>
+            </div>
+
+
+            <div class="col-lg-8 col-md-12 frame">
+                <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/mu30kWEqLFo"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe> -->
+                <video src="{{currentlectureurl}}" width="100%" height="100%" type="video/mp4" controls></video>
+            </div>
+        </div>
+    </div>
+</div>

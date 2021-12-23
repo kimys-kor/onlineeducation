@@ -1,0 +1,56 @@
+.image {
+    position:relative;
+  }
+
+.coursename {
+    font-size: 36px;
+    color: black;
+    font-weight: 900;
+    position: absolute;
+    top:390px;
+    left:300px;
+}
+.courseterm {
+    font-size: 36px;
+    color: black;
+    font-weight: 900;
+    position: absolute;
+    top:445px;
+    left:300px;
+}
+.username {
+    font-size: 36px;
+    color: black;
+    font-weight: 900;
+    position: absolute;
+    top:505px;
+    left:300px;
+}
+
+// @media only screen and (min-width: 0px) and (max-width: 1275px) {
+//     .coursename {
+//         font-size: 58px;
+//         color: black;
+//         font-weight: 900;
+//         position: absolute;
+//         top:500px;
+//         left:00px;
+//     }
+//     .courseterm {
+//         font-size: 58px;
+//         color: black;
+//         font-weight: 900;
+//         position: absolute;
+//         top:1090px;
+//         left:600px;
+//     }
+//     .username {
+//         font-size: 58px;
+//         color: black;
+//         font-weight: 900;
+//         position: absolute;
+//         top:1210px;
+//         left:600px;
+//     }
+    
+// }

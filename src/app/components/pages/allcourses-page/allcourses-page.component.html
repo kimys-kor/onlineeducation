@@ -1,0 +1,300 @@
+<app-header></app-header>
+
+<div class="page-title-area page-title-style-two">
+    <div class="container">
+        <div class="page-title-content">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>전체 강좌</li>
+            </ul>
+            <h2>전체 강좌</h2>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="courses-area ptb-100">
+    <div class="container">
+        <div class="courses-topbar">
+        </div>
+
+        <!-- 메인페이지강의 시작 -->
+        <ngx-tabset>
+            <ngx-tab tabTitle="전체강의">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6" *ngFor="let course of allcourses">
+                        <div class="single-courses-box mb-30">
+                            <div class="courses-image">
+                                <a routerLink="/single-courses" class="d-block"></a>
+                                <div class="courses-tag">
+                                    <a routerLink="/single-courses/{{course.id}}" class="d-block">{{course.subject}}</a>
+                                </div>
+                            </div>
+                            <div class="courses-content">
+                                <div class="course-author d-flex align-items-center">
+                                    <span>{{course.teacher}}</span>
+                                </div>
+                                <h3><a routerLink="/single-courses/{{course.id}}"
+                                        class="d-inline-block">{{course.subject}}</a>
+                                </h3>
+                                <div class="courses-rating">
+
+                                </div>
+                            </div>
+                            <div class="courses-box-footer">
+                                <ul>
+                                    <li class="students-number">
+                                        <i class='bx bx-user'></i> {{course.last_upload}} 강의
+                                    </li>
+                                    <li class="courses-lesson">
+                                        <i class='bx bx-book-open'></i> {{course.total_time}}
+                                    </li>
+                                    <li class="courses-price">
+                                        Free
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </ngx-tab>
+
+            <!-- <ngx-tab tabTitle="미적분학">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-courses-box mb-30">
+                            <div class="courses-image">
+                                <a routerLink="/single-courses" class="d-block"></a>
+                                <div class="courses-tag">
+                                    <a routerLink="/" class="d-block">미적분학</a>
+                                </div>
+                            </div>
+                            <div class="courses-content">
+                                <div class="course-author d-flex align-items-center">
+                                    <span>강동호 교수님</span>
+                                </div>
+                                <h3><a routerLink="/single-courses" class="d-inline-block">미적분학</a></h3>
+                                <div class="courses-rating">
+
+                                </div>
+                            </div>
+                            <div class="courses-box-footer">
+                                <ul>
+                                    <li class="students-number">
+                                        <i class='bx bx-user'></i> 21년11월 강의
+                                    </li>
+                                    <li class="courses-lesson">
+                                        <i class='bx bx-book-open'></i> 53시간
+                                    </li>
+                                    <li class="courses-price">
+                                        Free
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-tab>
+
+            <ngx-tab tabTitle="논리와 사고">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-courses-box mb-30">
+                            <div class="courses-image">
+                                <a routerLink="/single-courses" class="d-block"></a>
+                                <div class="courses-tag">
+                                    <a routerLink="/" class="d-block">논리와사고</a>
+                                </div>
+                            </div>
+                            <div class="courses-content">
+                                <div class="course-author d-flex align-items-center">
+                                    <span>김강욱 교수님</span>
+                                </div>
+                                <h3><a routerLink="/single-courses" class="d-inline-block">논리와 사고</a></h3>
+                            </div>
+                            <div class="courses-box-footer">
+                                <ul>
+                                    <li class="students-number">
+                                        <i class='bx bx-user'></i> 21년6월 강의
+                                    </li>
+                                    <li class="courses-lesson">
+                                        <i class='bx bx-book-open'></i> 42시간
+                                    </li>
+                                    <li class="courses-price">
+                                        Free
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-tab>
+
+            <ngx-tab tabTitle="C언어">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-courses-box mb-30">
+                            <div class="courses-image">
+                                <a routerLink="/single-courses" class="d-block"></a>
+                                <div class="courses-tag">
+                                    <a routerLink="/" class="d-block">c언어</a>
+                                </div>
+                            </div>
+                            <div class="courses-content">
+                                <div class="course-author d-flex align-items-center">
+                                    <span>김홍국 교수님</span>
+                                </div>
+                                <h3><a routerLink="/single-courses" class="d-inline-block">C언어</a></h3>
+                            </div>
+                            <div class="courses-box-footer">
+                                <ul>
+                                    <li class="students-number">
+                                        <i class='bx bx-user'></i> 21년4월 강의
+                                    </li>
+                                    <li class="courses-lesson">
+                                        <i class='bx bx-book-open'></i> 57시간
+                                    </li>
+                                    <li class="courses-price">
+                                        Free
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-tab>
+
+            <ngx-tab tabTitle="대학영어">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-courses-box mb-30">
+                            <div class="courses-image">
+                                <a routerLink="/single-courses" class="d-block"></a>
+                                <div class="courses-tag">
+                                    <a routerLink="/" class="d-block">대학영어</a>
+                                </div>
+                            </div>
+                            <div class="courses-content">
+                                <div class="course-author d-flex align-items-center">
+                                    <span>송영민 교수님</span>
+                                </div>
+                                <h3><a routerLink="/single-courses" class="d-inline-block">대학영어</a></h3>
+                                <div class="courses-rating">
+
+                                </div>
+                            </div>
+                            <div class="courses-box-footer">
+                                <ul>
+                                    <li class="students-number">
+                                        <i class='bx bx-user'></i> 21년10월 강의
+                                    </li>
+                                    <li class="courses-lesson">
+                                        <i class='bx bx-book-open'></i> 62시간
+                                    </li>
+                                    <li class="courses-price">
+                                        Free
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-tab>
+
+            <ngx-tab tabTitle="수리통계학">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-courses-box mb-30">
+                            <div class="courses-image">
+                                <a routerLink="/single-courses" class="d-block"></a>
+                                <div class="courses-tag">
+                                    <a routerLink="/" class="d-block">수리통계학</a>
+                                </div>
+                            </div>
+                            <div class="courses-content">
+                                <div class="course-author d-flex align-items-center">
+                                    <span>송종인 교수님</span>
+                                </div>
+                                <h3><a routerLink="/single-courses" class="d-inline-block">수리통계학1</a></h3>
+                                <div class="courses-rating">
+
+                                </div>
+                            </div>
+                            <div class="courses-box-footer">
+                                <ul>
+                                    <li class="students-number">
+                                        <i class='bx bx-user'></i> 21년10월 강의
+                                    </li>
+                                    <li class="courses-lesson">
+                                        <i class='bx bx-book-open'></i> 67시간
+                                    </li>
+                                    <li class="courses-price">
+                                        Free
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-tab>
+
+            <ngx-tab tabTitle="유체역학">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-courses-box mb-30">
+                            <div class="courses-image">
+                                <a routerLink="/single-courses" class="d-block"></a>
+                                <div class="courses-tag">
+                                    <a routerLink="/" class="d-block">유체역학</a>
+                                </div>
+                            </div>
+                            <div class="courses-content">
+                                <div class="course-author d-flex align-items-center">
+                                    <span>신종원 교수님</span>
+                                </div>
+                                <h3><a routerLink="/single-courses" class="d-inline-block">유체역학</a></h3>
+                                <div class="courses-rating">
+
+                                </div>
+                            </div>
+                            <div class="courses-box-footer">
+                                <ul>
+                                    <li class="students-number">
+                                        <i class='bx bx-user'></i> 21년10월 강의
+                                    </li>
+                                    <li class="courses-lesson">
+                                        <i class='bx bx-book-open'></i> 65시간
+                                    </li>
+                                    <li class="courses-price">
+                                        Free
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-tab> -->
+        </ngx-tabset>
+        <!-- 메인페이지강의 끝 -->
+
+
+        <!-- 페이지네이션 -->
+        <!-- <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="pagination-area text-center">
+                <span class="page-numbers current" aria-current="page">1</span>
+                <a routerLink="/allcourses" class="page-numbers">2</a>
+                <a routerLink="/allcourses" class="page-numbers">3</a>
+                <a routerLink="/allcourses" class="page-numbers">4</a>
+                <a routerLink="/allcourses" class="page-numbers">5</a>
+                <a routerLink="/allcourses" class="next page-numbers"><i class='bx bx-chevron-right'></i></a>
+            </div>
+        </div> -->
+        <!-- 페이지네이션 끝 -->
+
+    </div>
+</div>
